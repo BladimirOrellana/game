@@ -1,1 +1,101 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+.cobtainer{
+display: grid;
+width: 100%;
+background: black;
 
+}
+#main-container{
+    display: none;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+.lonchScreen{
+    text-align: center;
+    display: none;
+    background: black;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+.enter{
+    background: red;
+    color: white;
+    padding: 20px 60px 20px 60px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+#main-container-hidden{
+    text-align: center;
+    display: none;
+    background: black;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    color: white;
+}
+#main-container-hidden a{
+   
+    text-decoration: none;
+    background: red;
+    color: white;
+    padding: 20px 60px 20px 60px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.alphabet-container{
+    background: green;
+    margin-top: 100px;
+}
+.letter-container{
+    width: 40px;
+    height: 40px;
+    background: red;
+    margin: 5px;
+    float: left;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+   
+}
+.letter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.letter-container:hover{
+    box-shadow: 10px 10px 10px rgba(0,0,0,1);
+    transform: translateY(-5px);
+}
+.letter-container:active{
+    box-shadow: 5px 5px 5px rgba(0,0,0,1);
+    transform: translateY(5px);
+}
+
+@media screen and (max-width: 600px){
+    .letter-container{
+        width: 20px;
+        height: 20px;
+        background: orange;
+        margin: 5px;
+        float: left;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+       
+    }  
+}

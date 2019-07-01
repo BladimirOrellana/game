@@ -5,65 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Easy Hangman</title>
-    <style type="text/css">
-    *, *::after, *::before{
-        margin: 0;
-        padding: 0;
-    }
-.cobtainer{
-    display: grid;
-    width: 100%;
-    background: black;
-
-}
-    #main-container{
-        display: none;
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 20px;
-        
-    }
-    .lonchScreen{
-        text-align: center;
-        display: none;
-        background: black;
-        height: 100vh;
-        padding: 20px;
-        position: relative;
-    }
-    .enter{
-        background: red;
-        color: white;
-        padding: 20px 60px 20px 60px;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); 
-    }
-   
-    #main-container-hidden{
-        text-align: center;
-        display: none;
-        background: black;
-        height: 100vh;
-        padding: 20px;
-        position: relative;
-        color: white;
-    }
-    #main-container-hidden a{
-       
-        text-decoration: none;
-        background: red;
-        color: white;
-        padding: 20px 60px 20px 60px;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    </style>
+  <link rel="stylesheet" href="app.css">
 </head>
 <body>
 
@@ -71,7 +13,7 @@
 
    
         <div id="lonchScreen">
-                <h1 class="enter" id="enter">Press Enter To Estar The Game</h1>
+                <h1  class="enter" id="enter">PLAY</h1>
         </div>
     <div id="main-container">
 
@@ -84,6 +26,34 @@
     <p >Losses:<span id="yourLosses"></span></p>
     <p >Guesses Left:<span id="userGuessesLeft"></span></p>
     <p >Your Guesses So Far:<span id="yourGuessesSoFar"></span></p>
+    <div class="alphabet-container">
+        <div id="a"  class="letter-container"><span class="letter">a</span></div>
+        <div id="b" class="letter-container"><span class="letter">b</span></div>
+        <div id="c"  class="letter-container"><span class="letter">c</span></div>
+        <div id="d"   class="letter-container"><span class="letter">d</span></div>
+        <div id="e"   class="letter-container"><span class="letter">e</span></div>
+        <div id="f"   class="letter-container"><span class="letter">f</span></div>
+        <div id="g"   class="letter-container"><span class="letter">g</span></div>
+        <div id="h"   class="letter-container"><span class="letter">h</span></div>
+        <div id="i"   class="letter-container"><span class="letter">i</span></div>
+        <div id="j"   class="letter-container"><span class="letter">j</span></div>
+        <div id="k"   class="letter-container"><span class="letter">k</span></div>
+        <div id="l"   class="letter-container"><span class="letter">l</span></div>
+        <div id="m"   class="letter-container"><span class="letter">m</span></div>
+        <div id="n"   class="letter-container"><span class="letter">n</span></div>
+        <div id="o"   class="letter-container"><span class="letter">o</span></div>
+        <div id="p"   class="letter-container"><span class="letter">p</span></div>
+        <div id="q"   class="letter-container"><span class="letter">q</span></div>
+        <div id="r"   class="letter-container"><span class="letter">r</span></div>
+        <div id="s"   class="letter-container"><span class="letter">s</span></div>
+        <div id="t"   class="letter-container"><span class="letter">t</span></div>
+        <div id="u"   class="letter-container"><span class="letter">u</span></div>
+        <div id="v"   class="letter-container"><span class="letter">v</span></div>
+        <div id="w"   class="letter-container"><span class="letter">w</span></div>
+        <div id="x"   class="letter-container"><span class="letter">x</span></div>
+        <div id="y"   class="letter-container"><span class="letter">y</span></div>
+        <div id="z"   class="letter-container"><span class="letter">z</span></div>
+    </div>
 </div>
 <div id="main-container-hidden">
     <h1 class="game-over">Game Over</h1>
@@ -95,123 +65,6 @@
 
 </div>
 
-    <script type="text/javascript">
-
- 
- 
-
-    var you = document.getElementById("you");
-    var computer = document.getElementById("computer");
-    var youWin = document.getElementById("youWin");
-    var yourLosses = document.getElementById("yourLosses");
-    var YouGuessed = document.getElementById("YouGuessed");
-    var userGuessesLeft = document.getElementById("userGuessesLeft");
-    var yourGuessesSoFar = document.getElementById("yourGuessesSoFar");
-
-   var wins = 0;
-   var losses = 0;
-   var guessesLeft = 10;
-   var yourGuessesSoFar = 0;
-
-  
-  
-var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
-"q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-userGuessesLeft.textContent = guessesLeft;
-//THIS FUNCTION IS GOING TO HAVE THE LUNCH SCREEN FOR THE GAME
-
-function lunchScreen(){
-    document.getElementById("lonchScreen").style.display = "none";
-          document.getElementById("main-container").style.display = "block";
-}
-
-//THIS IS THE GAME LOGIC FUNTION 
-
-function gameLogic(){
-           
-    document.onkeydown = function(event){
-var userChoice = event.key;
-            var randondAlphabet = alphabet[Math.floor(Math.random()* alphabet.length)];
-
-     
-
-computer.textContent = randondAlphabet;
-
-you.textContent = userChoice;
-
-if(userChoice ===randondAlphabet){
-  wins++;
-youWin.textContent = wins;
-
-document.getElementById("YouGuessed").innerHTML = "YOU GUESSED!";
-  
-}else{
-   losses++;
-   yourLosses.textContent = losses;
-   YouGuessed.textContent = "Try Again";
-}
- 
-if(wins == losses){
-document.getElementById("yourGuessesSoFar").innerHTML = "Is a Tie" ;
-document.getElementById("yourGuessesSoFar").style.color = "orange";
-}else if(wins > losses){
-document.getElementById("yourGuessesSoFar").innerHTML = " You're Wining" ;
-document.getElementById("yourGuessesSoFar").style.color = "green";
-}else{
-document.getElementById("yourGuessesSoFar").innerHTML = " You're Lossing";
-document.getElementById("yourGuessesSoFar").style.color = "red";
-
-}
-
-
-//This set the Guesses left
-userGuessesLeft.textContent = guessesLeft--;
-if(guessesLeft === 0){
-   
-   document.getElementById("main-container").style.display = "none";
-   document.getElementById("main-container-hidden").style.display = "block";
-
-
-   
-}
-          }
-}
-document.getElementById("tryAgain").addEventListener("click", reloadGame);
-
-
-function reloadGame(){
-    location.reload();
-    document.getElementById("lonchScreen").style.display = "none";
-document.getElementById("main-container-hidden").style.display = "none";
-document.getElementById("main-container").style.display = "block";
-   
-   
-    
-    lunchScreen();
-  gameLogic();
-
-}
-
-//THIS IS THE MAIN FUNTION AND INSIDE THIS FUNTION WE WILL RUN THE gameLogic funtion
-   document.onkeydown = function(event){
-    var userChoice = event.key;
-
-  
-    
-    if(userChoice == "Enter"){
-        lunchScreen();
-        gameLogic();
-        }else{
-           document.getElementById("enter").innerHTML = "Please Press Enter";
-        }
-        
- 
-  
-
-
-   }
-
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
