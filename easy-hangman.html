@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Easy Hangman</title>
+    <style type="text/css">
+    *, *::after, *::before{
+        margin: 0;
+        padding: 0;
+    }
+.cobtainer{
+    display: grid;
+    width: 100%;
+    background: black;
+
+}
+    #main-container{
+        display: none;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+        
+    }
+    .lonchScreen{
+        text-align: center;
+        display: none;
+        background: black;
+        height: 100vh;
+        padding: 20px;
+        position: relative;
+    }
+    .enter{
+        background: red;
+        color: white;
+        padding: 20px 60px 20px 60px;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+   
+    #main-container-hidden{
+        text-align: center;
+        display: none;
+        background: black;
+        height: 100vh;
+        padding: 20px;
+        position: relative;
+        color: white;
+    }
+    #main-container-hidden a{
+       
+        text-decoration: none;
+        background: red;
+        color: white;
+        padding: 20px 60px 20px 60px;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+<body>
+
+   <div class="container">
+
+   
+        <div id="lonchScreen">
+                <h1 class="enter" id="enter">Press Enter To Estar The Game</h1>
+        </div>
+    <div id="main-container">
+
+    <h1 id="message"></h1>
+    <h1 id="header-title">The Psychic Game</h1>
+    <p id="YouGuessed">Gues what letter I'm thinking of!</p>
+    <p>Computer :<span id="computer"></span></p>
+    <p>You: <span id="you"></span></p>
+    <p >Wins:<span id="youWin"></span></p>
+    <p >Losses:<span id="yourLosses"></span></p>
+    <p >Guesses Left:<span id="userGuessesLeft"></span></p>
+    <p >Your Guesses So Far:<span id="yourGuessesSoFar"></span></p>
+</div>
+<div id="main-container-hidden">
+    <h1 class="game-over">Game Over</h1>
+        <a id="tryAgain">Try Again</a>
+</div>
+
+</div>
+
+
+</div>
+
+    <script type="text/javascript">
+
+ 
+ 
+
+    var you = document.getElementById("you");
+    var computer = document.getElementById("computer");
+    var youWin = document.getElementById("youWin");
+    var yourLosses = document.getElementById("yourLosses");
+    var YouGuessed = document.getElementById("YouGuessed");
+    var userGuessesLeft = document.getElementById("userGuessesLeft");
+    var yourGuessesSoFar = document.getElementById("yourGuessesSoFar");
+
+   var wins = 0;
+   var losses = 0;
+   var guessesLeft = 10;
+   var yourGuessesSoFar = 0;
+
+  
+  
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+"q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+userGuessesLeft.textContent = guessesLeft;
+//THIS FUNCTION IS GOING TO HAVE THE LUNCH SCREEN FOR THE GAME
+
+function lunchScreen(){
+    document.getElementById("lonchScreen").style.display = "none";
+          document.getElementById("main-container").style.display = "block";
+}
+
+//THIS IS THE GAME LOGIC FUNTION 
+
+function gameLogic(){
+           
+    document.onkeydown = function(event){
+var userChoice = event.key;
+            var randondAlphabet = alphabet[Math.floor(Math.random()* alphabet.length)];
+
+     
+
+computer.textContent = randondAlphabet;
+
+you.textContent = userChoice;
+
+if(userChoice ===randondAlphabet){
+  wins++;
+youWin.textContent = wins;
+
+document.getElementById("YouGuessed").innerHTML = "YOU GUESSED!";
+  
+}else{
+   losses++;
+   yourLosses.textContent = losses;
+   YouGuessed.textContent = "Try Again";
+}
+ 
+if(wins == losses){
+document.getElementById("yourGuessesSoFar").innerHTML = "Is a Tie" ;
+document.getElementById("yourGuessesSoFar").style.color = "orange";
+}else if(wins > losses){
+document.getElementById("yourGuessesSoFar").innerHTML = " You're Wining" ;
+document.getElementById("yourGuessesSoFar").style.color = "green";
+}else{
+document.getElementById("yourGuessesSoFar").innerHTML = " You're Lossing";
+document.getElementById("yourGuessesSoFar").style.color = "red";
+
+}
+
+
+//This set the Guesses left
+userGuessesLeft.textContent = guessesLeft--;
+if(guessesLeft === 0){
+   
+   document.getElementById("main-container").style.display = "none";
+   document.getElementById("main-container-hidden").style.display = "block";
+
+
+   
+}
+          }
+}
+document.getElementById("tryAgain").addEventListener("click", reloadGame);
+
+
+function reloadGame(){
+    location.reload();
+    document.getElementById("lonchScreen").style.display = "none";
+document.getElementById("main-container-hidden").style.display = "none";
+document.getElementById("main-container").style.display = "block";
+   
+   
+    
+    lunchScreen();
+  gameLogic();
+
+}
+
+//THIS IS THE MAIN FUNTION AND INSIDE THIS FUNTION WE WILL RUN THE gameLogic funtion
+   document.onkeydown = function(event){
+    var userChoice = event.key;
+
+  
+    
+    if(userChoice == "Enter"){
+        lunchScreen();
+        gameLogic();
+        }else{
+           document.getElementById("enter").innerHTML = "Please Press Enter";
+        }
+        
+ 
+  
+
+
+   }
+
+    </script>
+</body>
+</html>
