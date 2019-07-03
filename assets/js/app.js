@@ -90,11 +90,14 @@ you.textContent = userChoice;
 if(userChoice ===randondAlphabet){
   wins++;
 youWin.textContent = wins;
-
+losses--;
+guessesLeft++;
 YouGuessed.textContent = "You Guessed it";
   
 }else{
+  
    losses++;
+   console.log(losses);
    yourLosses.textContent = losses;
    YouGuessed.textContent = "Try Again";
    if(losses === 1){
@@ -186,6 +189,7 @@ document.getElementById("yourGuessesSoFar").style.color = "red";
 
 //This set the Guesses left
 userGuessesLeft.textContent = guessesLeft--;
+console.log(guessesLeft);
 if(guessesLeft === 0){
    
    document.getElementById("main-container").style.display = "none";
@@ -211,7 +215,7 @@ lunchScreen();
 function reset(){
   wins = 0;
   losses = 0;
-  guessesLeft = 10;
+  guessesLeft = 8;
   youWin.textContent = wins;
   yourLosses.textContent = losses;
   YouGuessed.textContent = "";
@@ -236,7 +240,7 @@ document.getElementById("main-container-hidden").style.display = "none";
 document.getElementById("main-container").style.display = "block";
    
   lunchScreen();
-  gameLogic();
+  
 
 
 }
