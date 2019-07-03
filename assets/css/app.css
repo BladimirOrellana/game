@@ -1,0 +1,149 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+.container{
+   
+    color: white;
+    max-width: 1500px;
+    margin: 0 auto;
+    text-align: center;
+    background-image: linear-gradient(to right bottom,
+    rgba(0,0,0,0.5),rgba(114, 33, 33, 0.5)), url("../img/main-cover.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
+.canvas{
+    border: 1px solid gray;
+    margin-top: 40px;
+}
+
+.game-message-container{
+   
+    position: relative;
+   
+    
+}
+
+#header-title{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    margin-bottom: 200px;
+
+}
+.resul-container{
+   
+ 
+    padding: 20px;
+}
+
+#lonchScreen{
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    background-image: linear-gradient(to right bottom,
+    rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../img/the-Hangman-logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.enter{
+    background: red;
+    color: white;
+    padding: 20px 60px 20px 60px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+#main-container{
+    text-align: center;
+    display: none;
+    background: gainsboro;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    color: white;
+}
+#main-container-hidden{
+    text-align: center;
+    display: none;
+    background: black;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    color: white;
+}
+#main-container-hidden a{
+   
+    text-decoration: none;
+    background: red;
+    color: white;
+    padding: 20px 60px 20px 60px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.alphabet-container{
+   margin-top: 20px;
+   
+}
+.alphabet-container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.letter-container{
+    width: 30px;
+    height: 30px;
+    background: orange;
+    margin: 5px;
+    float: left;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+   
+}
+.letter-container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.letter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.letter-container:hover{
+    box-shadow: 10px 10px 10px rgba(0,0,0,1);
+    transform: translateY(-5px);
+}
+.letter-container:active{
+    box-shadow: 5px 5px 5px rgba(0,0,0,1);
+    transform: translateY(5px);
+}
+
+@media screen and (max-width: 600px){
+    .letter-container{
+        width: 20px;
+        height: 20px;
+        background: orange;
+        margin: 5px;
+        float: left;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+       
+    }  
+}
