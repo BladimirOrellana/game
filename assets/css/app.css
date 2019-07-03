@@ -101,13 +101,13 @@
     clear: both;
 }
 .letter-container{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background: orange;
     margin: 5px;
     float: left;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     position: relative;
    
 }
@@ -133,11 +133,21 @@
 }
 
 @media screen and (max-width: 600px){
+
+    #header-title{
+        font-size: 15px;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        margin-bottom: 200px;
+    
+    }
     .letter-container{
-        width: 20px;
-        height: 20px;
+        width: 5px;
+        height: 5px;
         background: orange;
-        margin: 5px;
+        margin: 2px;
         float: left;
         text-align: center;
         padding: 10px;
