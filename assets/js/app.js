@@ -97,6 +97,77 @@ YouGuessed.textContent = "You Guessed it";
    losses++;
    yourLosses.textContent = losses;
    YouGuessed.textContent = "Try Again";
+   if(losses === 1){
+    myAudio.play();
+    c.save();
+    c.fillStyle = "orange";
+    c.beginPath();
+    c.arc(100, 120, 20, 0, 2 * Math.PI);
+  c.stroke();
+    c.restore();
+  }else if(losses === 2){
+    myAudio.play();
+    c.save();
+    c.fillStyle = "black";
+    c.fillRect(100,135,1,70);
+    c.restore();
+  }else if(losses === 3){
+    myAudio.play();
+    c.save();
+    c.fillStyle = "black";
+    c.beginPath();
+    c.arc(90, 115, 2, 0, 2 * Math.PI);
+  c.stroke();
+    c.restore();
+  }else if(losses === 4){
+    myAudio.play();
+    c.save();
+    c.fillStyle = "black";
+    c.beginPath();
+    c.arc(110, 115, 2, 0, 2 * Math.PI);
+    c.stroke();
+  c.restore();
+  }else if(losses === 5){
+    myAudio.play();
+    c.save();
+    c.fillStyle = "black";
+    c.beginPath();
+  c.lineCap = "round";
+  c.moveTo(99, 155);
+  c.lineTo(80, 170);
+  c.stroke();
+    c.restore();
+  }else if(losses === 6){
+    myAudio.play();
+    c.save();
+    c.fillStyle = "black";
+    c.beginPath();
+  c.lineCap = "round";
+  c.moveTo(101, 155);
+  c.lineTo(120, 170);
+  c.stroke();
+    c.restore();
+  }else if(losses === 7){
+    myAudio.play();
+    c.save();
+    c.fillStyle = "black";
+    c.beginPath();
+  c.lineCap = "round";
+  c.moveTo(101, 200);
+  c.lineTo(120, 250);
+  c.stroke();
+    c.restore();
+  }else if(losses === 8){
+    myAudioEnd.play();
+    c.save();
+    c.fillStyle = "black";
+    c.beginPath();
+  c.lineCap = "round";
+  c.moveTo(99, 200);
+  c.lineTo(80, 250);
+  c.stroke();
+    c.restore();
+  }
 }
  
 if(wins == losses){
@@ -109,85 +180,13 @@ document.getElementById("yourGuessesSoFar").style.color = "green";
 document.getElementById("yourGuessesSoFar").innerHTML = " You're Lossing";
 document.getElementById("yourGuessesSoFar").style.color = "red";
 
-if(losses === 1){
-  myAudio.play();
-  c.save();
-  c.fillStyle = "orange";
-  c.beginPath();
-  c.arc(100, 120, 20, 0, 2 * Math.PI);
-c.stroke();
-  c.restore();
-}else if(losses === 2){
-  myAudio.play();
-  c.save();
-  c.fillStyle = "black";
-  c.fillRect(100,135,1,70);
-  c.restore();
-}else if(losses === 3){
-  myAudio.play();
-  c.save();
-  c.fillStyle = "black";
-  c.beginPath();
-  c.arc(90, 115, 2, 0, 2 * Math.PI);
-c.stroke();
-  c.restore();
-}else if(losses === 4){
-  myAudio.play();
-  c.save();
-  c.fillStyle = "black";
-  c.beginPath();
-  c.arc(110, 115, 2, 0, 2 * Math.PI);
-  c.stroke();
-c.restore();
-}else if(losses === 5){
-  myAudio.play();
-  c.save();
-  c.fillStyle = "black";
-  c.beginPath();
-c.lineCap = "round";
-c.moveTo(99, 155);
-c.lineTo(80, 170);
-c.stroke();
-  c.restore();
-}else if(losses === 6){
-  myAudio.play();
-  c.save();
-  c.fillStyle = "black";
-  c.beginPath();
-c.lineCap = "round";
-c.moveTo(101, 155);
-c.lineTo(120, 170);
-c.stroke();
-  c.restore();
-}else if(losses === 7){
-  myAudio.play();
-  c.save();
-  c.fillStyle = "black";
-  c.beginPath();
-c.lineCap = "round";
-c.moveTo(101, 200);
-c.lineTo(120, 250);
-c.stroke();
-  c.restore();
-}else if(losses === 8){
-  myAudioEnd.play();
-  c.save();
-  c.fillStyle = "black";
-  c.beginPath();
-c.lineCap = "round";
-c.moveTo(99, 200);
-c.lineTo(80, 250);
-c.stroke();
-  c.restore();
-}
-
 
 }
 
 
 //This set the Guesses left
 userGuessesLeft.textContent = guessesLeft--;
-if(guessesLeft === -1){
+if(guessesLeft === 0){
    
    document.getElementById("main-container").style.display = "none";
    document.getElementById("main-container-hidden").style.display = "block";
