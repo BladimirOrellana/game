@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Easy Hangman</title>
-  <link rel="stylesheet" href="app.css">
+    <title>Hangman</title>
+  <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
 
    <div class="container">
-
-   
-        <div id="lonchScreen">
+  <div id="lonchScreen">
                 <h1  class="enter" id="enter">PLAY</h1>
         </div>
     <div id="main-container">
+    <div class="game-message-container">
+    <h1 id="header-title">Guess The Letter</h1>
+   </div>
 
+
+<canvas class="canvas" id="c" width="300" height="300"></canvas>
+
+<div class="resul-container">
     <h1 id="message"></h1>
-    <h1 id="header-title">The Psychic Game</h1>
-    <p id="YouGuessed">Gues what letter I'm thinking of!</p>
+    
+   
+    <p id="YouGuessed"></p>
     <p>Computer :<span id="computer"></span></p>
     <p>You: <span id="you"></span></p>
     <p >Wins:<span id="youWin"></span></p>
     <p >Losses:<span id="yourLosses"></span></p>
     <p >Guesses Left:<span id="userGuessesLeft"></span></p>
     <p >Your Guesses So Far:<span id="yourGuessesSoFar"></span></p>
-    <div class="alphabet-container">
+</div>
+<div class="alphabet-container">
         <div id="a"  class="letter-container"><span class="letter">a</span></div>
         <div id="b" class="letter-container"><span class="letter">b</span></div>
-        <div id="c"  class="letter-container"><span class="letter">c</span></div>
+        <div id="C"  class="letter-container"><span class="letter">c</span></div>
         <div id="d"   class="letter-container"><span class="letter">d</span></div>
         <div id="e"   class="letter-container"><span class="letter">e</span></div>
         <div id="f"   class="letter-container"><span class="letter">f</span></div>
@@ -53,7 +60,9 @@
         <div id="x"   class="letter-container"><span class="letter">x</span></div>
         <div id="y"   class="letter-container"><span class="letter">y</span></div>
         <div id="z"   class="letter-container"><span class="letter">z</span></div>
+        
     </div>
+
 </div>
 <div id="main-container-hidden">
     <h1 class="game-over">Game Over</h1>
@@ -64,7 +73,12 @@
 
 
 </div>
-
-    <script src="app.js"></script>
+<audio id="myAudio">
+    <source src="assets/sounds/Incoming_Suspense-Maximilien_-1060577487.mp3" type="audio/ogg">
+  </audio>
+  <audio id="myAudioEnd">
+    <source src="assets/sounds/No_mercy-Hipis-1227409429.wav" type="audio/ogg">
+  </audio>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>

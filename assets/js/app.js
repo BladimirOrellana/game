@@ -8,6 +8,7 @@
     var yourGuessesSoFar = document.getElementById("yourGuessesSoFar");
     var myAudio = document.getElementById("myAudio");
     var myAudioEnd = document.getElementById("myAudioEnd");
+    
 
     var c = document.getElementById("c").getContext("2d");
     c.save();
@@ -47,7 +48,7 @@ function lunchScreen(){
 
 document.getElementById("a").onclick = getLetter;
 document.getElementById("b").onclick = getLetter;
-document.getElementById("c").onclick = getLetter;
+document.getElementById("C").onclick = getLetter;
 document.getElementById("d").onclick = getLetter;
 document.getElementById("e").onclick = getLetter;
 document.getElementById("f").onclick = getLetter;

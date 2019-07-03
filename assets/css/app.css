@@ -3,16 +3,12 @@
     padding: 0;
 }
 .container{
-   
+   max-width: 980px;
     color: white;
-    max-width: 1500px;
+    
     margin: 0 auto;
-    text-align: center;
-    background-image: linear-gradient(to right bottom,
-    rgba(0,0,0,0.5),rgba(114, 33, 33, 0.5)), url("../img/main-cover.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+   
+  
  
 }
 .canvas{
@@ -36,9 +32,7 @@
 
 }
 .resul-container{
-   
- 
-    padding: 20px;
+  
 }
 
 #lonchScreen{
@@ -65,11 +59,15 @@
 #main-container{
     text-align: center;
     display: none;
-    background: gainsboro;
     height: 100vh;
     padding: 20px;
     position: relative;
     color: white;
+    background-image: linear-gradient(to right bottom,
+    rgba(0,0,0,0.5),rgba(114, 33, 33, 0.5)), url("../img/main-cover.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #main-container-hidden{
     text-align: center;
