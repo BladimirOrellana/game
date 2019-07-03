@@ -225,10 +225,8 @@ function reset(){
 }
 
 function clearCanvas() {
-  c.clearRect(0, 0, c.width, c.height);
-  var w = c.width;
-  c.width = 1;
-  c.width = w;
+  c.clearRect(70, 95, 99, 170);
+  
 }
 
 function reloadGame(){
