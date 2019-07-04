@@ -30,7 +30,7 @@
   
     var wins = 0;
     var losses = 0;
-    var guessesLeft = 8;
+    var guessesLeft = 7;
     var yourGuessesSoFar = 0;
  
   
