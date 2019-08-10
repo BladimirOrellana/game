@@ -12,7 +12,7 @@
 
     var c = document.getElementById("c").getContext("2d");
     c.save();
-    c.fillStyle = "green";
+    c.fillStyle = "red";
     c.fillRect(0,280,300,20);
     c.restore();
     c.save();
